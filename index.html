@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ELYANA PARFUMS — Luxury Fragrance</title>
+
+    <meta name="description" content="ELYANA — Modern luxury fragrances crafted for unforgettable moments.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="#" class="logo">ELYANA PARFUMS</a>
+
+    <nav class="nav">
+        <a href="#shop">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Our Story</a>
+        <a href="#reviews">Reviews</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button class="icon-button" onclick="openSearch()">
+            🔍
+        </button>
+
+        <button class="cart-button" onclick="openCart()">
+            Bag <span id="cart-count">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <button class="close-search" onclick="closeSearch()">×</button>
+
+    <div class="search-box">
+
+        <p>SEARCH ELYANA PARFUMS</p>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search fragrances..."
+            oninput="searchProducts()"
+        >
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">THE NEW FRAGRANCE HOUSE</p>
+
+        <h1>
+            SCENT IS<br>
+            <span>A MEMORY.</span>
+        </h1>
+
+        <p class="hero-text">
+            Discover modern fragrances crafted to become
+            unforgettable parts of your story.
+        </p>
+
+        <a href="#shop" class="primary-button">
+            Explore Collection
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MARQUEE ================= -->
+
+<div class="marquee">
+
+    <div>
+        ✦ LUXURY FRAGRANCE ✦ CRAFTED WITH CARE ✦ ELYANA PARFUMS ✦ LUXURY FRAGRANCE ✦ CRAFTED WITH CARE ✦ ELYANA PARFUMS ✦ LUXURY FRAGRANCE ✦ CRAFTED WITH CARE ✦ ELYANA PARFUMS ✦ LUXURY FRAGRANCE ✦ CRAFTED WITH CARE ✦ ELYANA PARFUMS ✦ 
+    </div>
+
+</div>
+
+
+<!-- ================= FEATURED ================= -->
+
+<section class="section" id="shop">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2>Signature Scents</h2>
+        </div>
+
+        <a href="#" class="view-all">View All →</a>
+
+    </div>
+
+
+    <div class="products" id="productGrid">
+
+        <!-- Products inserted by JavaScript -->
+
+    </div>
+
+</section>
+
+
+<!-- ================= COLLECTIONS ================= -->
+
+<section class="collections-section" id="collections">
+  <div class="collection-card">
+    <img src= "images/824.png" alt="For Him collection">
+
+    <div class="collection-overlay">
+      <p>THE COLLECTION</p>
+      <h2>For Him</h2>
+      <a href="#shop" onclick="filterProducts('Men'); return false;">DISCOVER →</a>
+  </div>
+     </div>
+
+  <div class="collection-card">
+    <img src="images/825.png" alt="For Her collection">
+
+    <div class="collection-overlay">
+      <p>THE COLLECTION</p>
+      <h2>For Her</h2>
+      <a href="#shop" onclick="filterProducts('Women'); return false;">DISCOVER →</a>
+    </div>
+  </div>
+
+  <div class="collection-card">
+    <img src="images/1141.png" alt="Perfume samples collection">
+
+    <div class="collection-overlay">
+      <p>THE COLLECTION</p>
+      <h2>Samples</h2>
+      <a href="#shop" onclick="filterProducts('Samples'); return false;">DISCOVER →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY ================= -->
+
+<section class="story" id="about">
+
+    <div class="story-image"></div>
+
+    <div class="story-content">
+
+        <p class="eyebrow">OUR PHILOSOPHY</p>
+
+        <h2>
+            Fragrance is more
+            than a scent.
+        </h2>
+
+        <p>
+            ELYANA PARFUMS was created around a simple idea:
+            fragrance should feel personal.
+        </p>
+
+        <p>
+            Every composition is designed to evolve on
+            the skin — opening with character, developing
+            with depth and leaving behind a memorable trail.
+        </p>
+
+        <a href="#" class="text-link">
+            Discover Our Story →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTES ================= -->
+
+<section class="notes-section">
+
+    <div class="notes-content">
+
+        <p class="eyebrow">FIND YOUR SIGNATURE</p>
+
+        <h2>
+            What does your<br>
+            <i>story</i> smell like?
+        </h2>
+
+        <p>
+            From rich amber to fresh citrus,
+            delicate florals, and mysterious woods, discover
+            the fragrance that feels like you.
+        </p>
+
+        <div class="note-buttons">
+
+            <button onclick="filterNotes('Floral')">
+                Floral
+            </button>
+
+            <button onclick="filterNotes('Fruity')">
+                Fruity
+            </button>
+
+            <button onclick="filterNotes('Oud')">
+                Oud
+            </button>
+
+            <button onclick="filterNotes('Woody')">
+                Woody
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews" id="reviews">
+
+    <div class="section-heading centered">
+
+        <div>
+
+            <p class="eyebrow">THE ELYANA PARFUM COMMUNITY</p>
+
+            <h2>Loved by fragrance lovers.</h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Absolutely loved this perfume! The packaging was beautiful and felt very premium. The fragrance quality is excellent, and the scent is amazing."
+            </p>
+
+            <span>— Customer</span>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "The fragrance is really outstanding and lasts 10 to 12 hours in humid weather. I highly recommend for every fragrance lover."
+            </p>
+
+            <span>— Customer</span>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "As soon as l opened the package and smelt it, the fragrance was absolutely awesome. Really loved it!"
+            </p>
+
+            <span>— Customer</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <p class="eyebrow">JOIN ELYANA PARFUMS</p>
+
+    <h2>Be the first to know.</h2>
+
+    <p>
+        New fragrances, exclusive releases and private offers.
+    </p>
+
+    <form onsubmit="subscribe(event)">
+
+        <input
+            type="email"
+            placeholder="Your email address"
+            required
+        >
+
+        <button type="submit">
+            Subscribe
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-brand">
+
+        <h2>ELYANA PARFUMS</h2>
+
+        <p>
+            Modern fragrance.<br>
+            Unforgettable memories.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h4>SHOP</h4>
+
+        <a href="#shop">All Fragrances</a>
+        <a href="#collections">For Him</a>
+        <a href="#collections">For Her</a>
+
+
+    </div>
+
+
+    <div>
+
+        <h4>HELP</h4>
+
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="https://api.whatsapp.com/send?phone=923352201011" target="_blank">
+    Business WhatsApp
+</a>
+
+    </div>
+
+
+    <div>
+
+        <h4>FOLLOW</h4>
+
+        
+        <div class="social-links">
+    <a href="https://www.instagram.com/elyana_fragrances?igsi=MXRoZG91N3dnMTZ5dw==" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@bushra_09876?_r=1&_t=ZS-99SDuXWXh4O" target="_blank">Tiktok</a>
+   <a href="https://www.facebook.com/share/1E8yCJCc7u/" target="_blank">Facebook</a>
+</div>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+    © 2026 ELYANA PARFUMS. All rights reserved.
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay" id="cartOverlay">
+
+    <div class="cart">
+
+        <div class="cart-header">
+
+            <h2>Your Bag</h2>
+
+            <button onclick="closeCart()">×</button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-bottom">
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    PKR 0
+                </strong>
+
+            </div>
+  <h3>Delivery Details</h3>
+
+  <input
+    type="text"
+    id="customerName"
+    placeholder="Full Name"
+    required
+  >
+
+  <input
+    type="tel"
+    id="customerPhone"
+    placeholder="Phone Number"
+    required
+  >
+
+  <input
+    type="text"
+    id="customerCity"
+    placeholder="City"
+    required
+  >
+
+  <textarea
+    id="customerAddress"
+    placeholder="Delivery Address"
+    required
+  ></textarea>
+
+  <textarea
+    id="customerNotes"
+    placeholder="Order notes (optional)"
+  ></textarea>
+
+  <div class="payment-method">
+    <strong>Payment</strong>
+    <p>💵 Cash on Delivery</p>
+  </div>
+  
+<button class="checkout-btn" onclick="placeOrder()">
+    PLACE ORDER
+  </button>
+
+  <p id="orderMessage"></p>
+  
+  </div>
+
+        </div>
+
+    </div>
+
+</div><!-- end cart-overlay -->
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
